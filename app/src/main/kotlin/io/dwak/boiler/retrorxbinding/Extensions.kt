@@ -6,10 +6,10 @@ import rx.Observable
 import rx.functions.Action1
 
 public fun Activity.bind<T>(from: Observable<T>, to: Action1<in T>) {
-    from.subscribe(Action1 { to.call(it) })
+    from.subscribe(to)
 }
 
 public fun Fragment.bind<T>(from: Observable<T>, to: Action1<in T>) {
-    from.subscribe(Action1 { to.call(it) })
+    from.subscribe(to)
 }
 
