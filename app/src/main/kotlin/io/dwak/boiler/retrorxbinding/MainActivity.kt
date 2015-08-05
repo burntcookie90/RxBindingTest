@@ -21,11 +21,11 @@ public class MainActivity : AppCompatActivity() {
         val mainViewModel = MainViewModel()
         val intToString: (Int) -> String = { it.toString() }
 
-        bind<String>(mainViewModel.counter().map(intToString), binding.counterOutput.text())
+        bind(mainViewModel.counter().map(intToString), binding.counterOutput.text())
 
-        bind<String>(mainViewModel.progress().map(intToString), binding.seekbarOutput.text())
+        bind(mainViewModel.progress().map(intToString), binding.seekbarOutput.text())
 
-        bind<Int>(mainViewModel.progress(), binding.progBar.progress())
+        bind(mainViewModel.progress(), binding.progBar.progress())
 
         bind(binding.counterButton.clicks(), mainViewModel.counterClicked())
 
